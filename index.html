@@ -1,0 +1,169 @@
+<!-- my advice to beginners is to just use netlify hooked up to a github repo, instead of using FTP and digital ocean droplets? especially small portfolio static sites won't cost you a penny on netlify's free plan -->
+<!DOCTYPE HTML>  
+<html lang="en">
+    <head>
+        <meta charset='UTF-8'>
+        <!-- To scale for both mobile and desktop viewing -->
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        
+        
+        <!-- Title of the Website shown from the tab -->
+        <title>Professional Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.15.1/normalize.min.css">
+        
+        
+        
+        <!-- Font awesome webfront js to use font-awesome icons -->
+        <script src="https://kit.fontawesome.com/0770cfc568.js" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+                integrity="sha256-46qynGAkLSFpVbEBog43gvNhfr0j+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        
+        <!-- Update these with your own fonts (customize fonts if you want to) -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/style.css">
+        
+        
+    
+    </head>
+    
+    <body>
+        <header>
+            <div class="logo">
+                <a href="#">
+                    <img src="images/system.jpg" alt="">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Introduction -->
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro">
+                <strong>Dennis Osafo</strong>
+            </h1>
+            <!--Modifications done in .css-->
+            <p class="section__subtitle section__subtitle--intro"><b>System Engineer</b></p>
+            <img src="images/data_architect.jpg" alt="Data Architect" class="intro__img"> <!-- Descriptiion of what the project is -->
+        </section>
+    
+         <!-- About Me -->
+        <section class="about-me" id="about">
+            <h2 class="section__title section__title--about">Introduction</h2>
+            <p class="section__subtitle section__subtitle--about"><strong>Provide insights to real world data</strong></p>
+            
+            <div class="about-me__body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            
+            </div>
+            
+            <!--/images/20201003_170539.jpg*/-->
+            <img src="../images/20201003_170539.jpg" alt="Profile Pic" class="about-me__image">
+        </section>
+        
+        <!-- Services --> 
+        <section class="my_services" id="services">
+            <h2 class="section_title section_tile--services">Services I Render</h2>
+            <div class = "services">
+                <div class ="service">
+                    <h3>Data Architect</h3>
+                    <p> Analyzes the data needs of the company and uses skills in coding to maintain secure databases. They then collect and organize the data obtained. A Data Architect uses their training in analytics and various coding programs to analyze information and draw conclusions based on their findings. Additionally, using mathematical and statistical theory methods they present findings to management which are then used to improve various initiatives within the company. A Data Architect can look at a set of data and seek out patterns and utilize the information to remain competitive in the business of their employer.</p>
+                </div> <!-- /service -->
+                
+                <div class ="service">
+                    <h3>Data Science & Analysis</h3>
+                    <p>Data scientists are responsible for discovering insights from massive amounts of structured and unstructured data to help shape or meet specific business needs and goals. The data scientist role is becoming increasingly important as businesses rely more heavily on data analytics to drive decision-making and lean on automation and machine learning as core components of their IT strategies.</p>
+                </div> <!-- /service -->
+                
+                <div class ="service">
+                    <h3>Cloud Architect</h3>
+                    <p>Cloud architects are responsible for managing the cloud computing architecture in an organization, especially as cloud technologies grow increasingly complex. Cloud computing architecture encompasses everything involved with cloud computing, including the front-end platforms, servers, storage, delivery and networks required to manage cloud storage.</p>
+                </div> <!-- /service -->
+                <div class ="service">
+                    <h3>IT Automation</h3>
+                    <p>IT automation, sometimes referred to as infrastructure automation, is the use of software to create repeatable instructions and processes to replace or reduce human interaction with IT systems. Automation software works within the confines of those instructions, tools, and frameworks to carry out the tasks with little to no human intervention.</p>
+                </div> <!-- /service -->
+                
+            </div> <!-- /services -->
+            
+            
+            <a href="#work" class="btn">My Work</a>
+        </section>
+        
+        
+        <!-- My Work -->
+        <section class="my-work" id="work">
+            <h2 class="section__title section__tile--work">My work</h2>
+            <p class="section__subtitle section__subtitle--work">My projects are as follows:</p>
+            
+            <div class = "portfolio">
+                <!--Portfolio Item 01 -->
+                <a href="../Portfolio/portfolio_item.html" class="portfolio__item">
+                    <img src="images/data_engineering.jpg" alt="Data Engineering" width="430" height="310" class="portfolio__img">
+                </a>
+                <!--Portfolio Item 02 -->
+                <a href="../Portfolio/portfolio_item_02.html" class="portfolio__item">
+                    <img src="images/data-science.jpg" width="430" height="310" alt="Data Science" class="portfolio__img" >
+                </a>
+                <!--Portfolio Item 03 -->
+                <a href="../Portfolio/portfolio_item_03.html" class="portfolio__item">
+                    <img src="images/data_analysis.jpg" width="430" height="310" alt="Data Analysis" class="portfolio__img">
+                </a>
+                <!--Portfolio Item 04 -->
+                <a href="../Portfolio/portfolio_item_04.html" class="portfolio__item">
+                    <img src="images/database_development.jpg" width="430" height="310" alt="Database Development"  class="portfolio__img">
+                </a>
+                <!--Portfolio Item 05 -->
+                <a href="../Portfolio/portfolio_item_05.html" class="portfolio__item">
+                    <img src="images/big_data.jpg" width="430" height="310" alt="Data Architect" class="portfolio__img">
+                </a>
+                <!--Portfolio Item 06 -->
+                <a href="../Portfolio/portfolio_item_06.html" class="portfolio__item">
+                    <img src="images/networks.jpg" width="430" height="310" alt="API and Networks" class="portfolio__img">
+                </a>
+                
+                
+            </div>
+        
+        </section>
+        
+        
+        <!--Footer-->
+        <footer class = "footer">
+            <a href="mailto:menace3780@gmail.com", class="footer__link">menace3780@gmail.com</a>
+            <ul class= 'social-list'>
+                <li class="social-list__item">
+                    <a class="social-list__link" href = "https://codeopen.io">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href = "https://codeopen.io">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li> 
+            </ul>
+        
+        </footer>
+        
+        <script src="js/index.js"></script>
+    
+    
+    </body>
+
+
+</html>
