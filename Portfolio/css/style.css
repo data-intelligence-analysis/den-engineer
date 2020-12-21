@@ -1,0 +1,563 @@
+
+/*Recomment doing it on every project*/
+
+*,
+*::before,
+*::after {
+    /*Border box is changing how padding is calculated to make it within a width instead of adding on to the total width of something it just makes our lives so much easier when we're setting things*/
+    box-sizing: border-box;
+}
+
+/*Custom properties update these for your own design*/
+:root {
+    /* font size family*/
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+    
+    
+    --fw-reg: 300;
+    --fw-bold: 900;
+    
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #6495ED; /*#1E90FF*//*#0080FF;*/ /*#6495ED*/
+    --clr-accent_2: #0080FF;
+    
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    /*Change size of fonts on small displays*/
+    --fs-body: 1.5rem;
+    
+    /*Box Shadow*/
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+        0.125em 0.125em 0.25em rgba(0,0,0,.15);
+    
+
+}
+
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        /*Change font size on bigger display*/
+        --fs-body: 1.60rem;
+    }
+}
+
+
+/*General Styles*/
+
+/*Smooth scrolling on the website and also when you select sections within the page from the navigation menu or within page*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+
+
+section { /*Keep things from touching the side of the screen*/
+    padding: 5em 2em;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+strong { font-weight: var(--fw-bold ) } /*Strong font weight*/
+
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 2.5px;
+}
+
+
+/*Button*/
+/*Edditing the features of My Work button*/
+.btn{
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr--dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+/*When hovering over the button it becomes bigger*/
+/*This allows you to edit the effects of hovering over the button*/
+.btn:hover {
+    transform: scale(1.1);
+}
+
+
+/*Typography*/
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+
+
+.section__title {
+    margin-bottom: .25em;
+
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+.seection__title--intro strong {
+    display: block;  
+}
+
+/*Do this as a font size*/
+.section__subtitle{
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about{
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+.section__subtitle 
+
+/*Header*/
+
+header{ 
+    display: flex; /*because we want the logo to be on the left and the button to shoot shoot over to the right*/
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.logo{
+    max-width: 100px;
+}
+
+.nav{
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;/*To pull in front every thing else*/
+    
+    /*Hide or show navigation list*/
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);     
+}
+
+.nav__list{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Fix weird issues of spacing*/
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+.nav__link{
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    color: var(--clr-accent);
+}
+
+
+.nav-toggle{
+    padding: .25em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle{
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn)
+}
+
+
+.nav-open .hamburger::before{
+    /*Rotate the hamburger*/
+    transform: rotate(90deg) translateX(-6px)
+}
+.nav-open .hamburger::after{
+    opacity: 0;
+}
+
+.hamburger{
+    
+    /*By default iot is span in line*/
+    display: block;
+    /*Absolute position*/
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+    
+}
+
+
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+}
+
+
+.hamburger::before { top: 6px; }
+.hamburger::after { bottom: 6px}
+
+
+/*nav { display: none; }*/ /*Removes navigatyion display*/
+
+
+/* Intro section */
+.intro {
+    position: relative;
+    
+}
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+/*To account for small screen sizes*/
+.section__subtitle--intro{ /*Adjust the screen resolution for smaller screens*/
+    display: inline-block;
+}
+
+/*Developing the grid*/
+@media (min-width: 600px) {
+    /*Setting up the Intro section*/
+    .intro {
+        display: grid;
+        
+        /*Stick content or intro section to the middle*/
+        width: min-content;
+        
+        /*Keep content in the middle and automatically align*/
+        margin: 0 auto;
+        /*Align text in the intro section to create that spacing we want*/
+        grid-column-gap: 1em;
+        grid-template-areas:
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+            
+    }
+    /*Setting up the Introduction Image*/
+    .intro__img {
+        grid-area: img;
+        /*Just so image never disappears*/
+        min-width: 250px;
+        /*Positioning image*/
+        position: relative;
+        z-index: 2;
+    }
+    /*Section subtitle (system Engineer)*/
+    /*We are pertaining to layout right now*/
+    .section__subtitle--intro{
+        align-self: start;
+        /*stretch the whole length going across*/
+        grid-column: -1 / 1;
+        /*removing overlapping issues*/
+        grid-row: 2;
+        /*Align subtitle intro to the right*/
+        text-align: right;
+        /**/
+        position: relative;
+        left: -1.5em;
+        /*Adjusting the subtitle intro (blue highlighted)*/
+        width: calc(100% + 1.5em);
+        
+    }
+   
+}
+
+/*My Services Seciton*/
+
+.my_services {
+    /*Just in case the background image fails for some reason you have the bacground color ot depend on*/
+    background-color: var(--clr-dark);
+    background-image: url(../images/data_analytics_banner.jpg);
+    background-size: cover;
+    /*background-blend mode: multiply*/
+    color: var(--clr-light);
+    text-align: center;
+       
+}
+
+.section_tile--services{
+    color: var(--clr-accent_2);
+    position: relative;
+
+}
+.section_tile--services::after {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 2px;
+    margin: 0.5em auto 1em;
+    background: var(--clr--light);
+    opacity: 0.25;
+}
+
+/*Create more space between the button and the services*/
+.services{
+    margin-bottom: 4em;
+}
+
+
+
+/*Individual services customization*/
+.service {
+    max-width: 500px;
+    margin: 0 auto; 
+}
+
+@media (min-width: 800px) {
+    .services {
+        display: flex;
+        max-width 1000px;
+        /*So that it doesn't overwrite that margin bottom in .services and to prevent the margins from dissapering, which happens when you use margin: 0 auto*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .services + .services {
+        margin-left: 2em;
+        
+    }
+}
+
+.about-me{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__image{
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        /*Set up templates*/
+        grid-template-areas:
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+    }
+    .section__title--about{
+        grid-area: title;
+    }
+    .section__subtitle--about{
+        /*It goes from one end to the other*/
+        /*The beauty of grid is that adding more paragraphs to the html about section creates more grid lines not sure whether it will break though if a lot is added*/
+        grid-column: 1 / -1;
+        /*To keep the image to the right*/
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        /*makes the accent stick out at both sides*/
+        width: calc(100% + 2em);
+        /*To prevent the text from touching the image*/
+        padding-left: 1em; /*Padding is needed to get the text lined up with all sizes*/
+        padding-right: calc(200px + 4em);/*Set up the padding so that the text can never go underneath*/
+    }
+    
+    .about-me__image {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+        
+    }
+}
+
+/* My Work */
+.my-work{
+    background-color: var(--clr-accent);
+    color: var(--clr-dark);
+    /*Align text in the center*/
+    text-align: center;  
+}
+
+.section__subtitle--work { /*Can be defined in Typography too*/
+    color: var(--clr-dark);
+    font-weight: var(--fw-bold);
+    /*For spacing*/
+    margin-bottom: 2em;
+}
+
+.portfolio{
+    /*Create Grids*/
+    display: grid;
+    
+    /*Automatically make three columns*/
+    
+    /*grid-template-columns: repeat(3, 1fr);*/
+    
+    /*minmax setting a minimum size like 300px and if it has room to get bigger the pieces get bigger*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*to account for multiple pieces of portfolio images*/
+    /*set it to prevent it from being this one long string*/
+    max-width: 0 auto;*/
+    
+}
+.portfolio__item{
+    background: var(--clr-accent);
+    /*  Allows the hover effect of the portfolio to appear in place instead of extending out*/
+    overflow: hidden;
+}
+
+.portfolio__img {
+    transition:
+        transform 750ms cubic-bezier(.5,0,.5,1),
+        opacity 250ms linear;
+}
+
+/*Focus is the blue bar*/
+.portfolio__item:focus{
+    position: relative;
+    z-index: 2;
+}
+
+/*Image is inside the portfolio item*/
+
+/*Hover effect of the portfolio item*/
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img{
+    transform: scale(1,2);
+    /*How transparent do you want the hover color to be*/
+    opacity: .5;
+}
+
+
+/*Footer*/
+.footer {
+    background: var(--clr-dark);/*#111;*/
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+.footer a { 
+    color: inherit;
+    text-decoration: none;
+
+}
+
+.footer__link{
+    font-weight: var(--fw-bold);
+}
+
+.footer__link:hover,
+.social-list__link:hover {
+    opacity: .7;
+}
+
+footer__link:hover{
+    text-decoration: underline;
+
+}
+
+.social-list{
+    list-style: none; /*We don not want the bullets*/
+    display: flex;
+    justify-content: center;/*Push social media icons right to the middle*/
+    margin: 2em 0 0; /*So that it does not add empty spaces for nothing*/
+    padding: 0;
+}
+
+.socila-list__item{
+    margin: 0 .5em;
+}
+
+.social-list__link{
+    padding: .5em
+}
+
+
+/*For pportfolio items to make changes between image and texts above and below*/
+.portfolio-item-individual{
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/*Edit width of paragraph and text to make it readable*/
+.portfolio-item-individual p {
+    max-width: 710px;
+    /*Keep the top and bottom margins the default margins that were already on the paragraphs because it means we're getting the spacing where it would take those off so its sort of folk our text we can have bigger images that break out a little bit and we still have our regular paragraphs that describe the project a little bit*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Position the image in the center using margin*/
+.portfolio__image{
+    margin-left: auto;
+    margin-right: auto;
+}
