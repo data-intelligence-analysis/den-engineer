@@ -159,7 +159,11 @@ header{
 }
 
 .logo{
-    max-width: 100px;
+    max-width: 80px;
+}
+
+.logo__item{
+    background: var(--clr-light);
 }
 
 .nav{
