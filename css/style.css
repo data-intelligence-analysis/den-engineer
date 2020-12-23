@@ -283,7 +283,8 @@ header{
     
 }
 .intro__img {
-    box-shadow: var(--bs);
+    /*box-shadow: var(--bs);*/
+    /*background: var(--clr-light);*/
 }
 
 /*To account for small screen sizes*/
@@ -314,7 +315,7 @@ header{
     .intro__img {
         grid-area: img;
         /*Just so image never disappears*/
-        min-width: 250px;
+        min-width: 260px;
         /*Positioning image*/
         position: relative;
         z-index: 2;
