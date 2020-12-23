@@ -530,7 +530,7 @@ footer__link:hover{
 }
 
 .social-list{
-    list-style: none; /*We don not want the bullets*/
+    list-style: none; /*We do not want the bullets*/
     display: flex;
     justify-content: center;/*Push social media icons right to the middle*/
     margin: 2em 0 0; /*So that it does not add empty spaces for nothing*/
@@ -559,10 +559,19 @@ footer__link:hover{
     /*Keep the top and bottom margins the default margins that were already on the paragraphs because it means we're getting the spacing where it would take those off so its sort of folk our text we can have bigger images that break out a little bit and we still have our regular paragraphs that describe the project a little bit*/
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
 }
 
 /*Position the image in the center using margin*/
 .portfolio__image{
     margin-left: auto;
+    margin-right: auto;
+    /*justify-content: center;
+    margin: 2em 0 0; /*So that it does not add empty spaces for nothing
+    padding: 0;*/
+}
+.portfolio__images{
+    margin-left: auto;
+    margin-top: auto;
     margin-right: auto;
 }
