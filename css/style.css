@@ -418,8 +418,10 @@ header{
     }
     .section__title--about{
         grid-area: title;
+        text-align: center;
     }
     .section__subtitle--about{
+        text-align: center;
         /*It goes from one end to the other*/
         /*The beauty of grid is that adding more paragraphs to the html about section creates more grid lines not sure whether it will break though if a lot is added*/
         grid-column: 1 / -1;
@@ -432,6 +434,7 @@ header{
         /*To prevent the text from touching the image*/
         padding-left: 1em; /*Padding is needed to get the text lined up with all sizes*/
         padding-right: calc(200px + 4em);/*Set up the padding so that the text can never go underneath*/
+        
     }
     
     .about-me__image {
