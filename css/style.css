@@ -1,5 +1,5 @@
 
-/*Recomment doing it on every project*/
+/*Recommend doing it on every project*/
 
 *,
 *::before,
@@ -26,6 +26,7 @@
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
+    --fs-h4: 2.2rem;
     /*Change size of fonts on small displays*/
     --fs-body: 1.5rem;
     
@@ -285,6 +286,7 @@ header{
 .intro__img {
     /*box-shadow: var(--bs);*/
     /*background: var(--clr-light);*/
+    opacity: 0.9
 }
 
 /*To account for small screen sizes*/
@@ -524,7 +526,7 @@ header{
 
 .footer__link:hover,
 .social-list__link:hover {
-    opacity: .7;
+    opacity: .6;
 }
 
 footer__link:hover{
@@ -566,6 +568,10 @@ footer__link:hover{
 }
 
 .section__portfolio-item-title {
+    text-align: center;
+    font-size: var(--fs-h4)
+}
+.section__portfolio-item-subtitle{
     text-align: center;
 }
 

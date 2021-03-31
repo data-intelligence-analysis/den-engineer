@@ -1,5 +1,5 @@
 const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelectorAll('.nav__link')
+const navLinks = document.querySelectorAll('.nav__link');
 
 /*Everytime we click on the button it should add the class*/
 navToggle.addEventListener('click', () => {
