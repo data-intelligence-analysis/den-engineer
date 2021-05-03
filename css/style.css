@@ -283,6 +283,10 @@ header{
     position: relative;
     
 }
+.tester__img{
+    margin-left: auto;
+    margin-right: auto;
+}
 .intro__img {
     /*box-shadow: var(--bs);*/
     /*background: var(--clr-light);*/
@@ -401,6 +405,11 @@ header{
 .about-me{
     max-width: 1000px;
     margin: 0 auto;
+}
+.about-me__body{
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto
 }
 
 .about-me__image{
